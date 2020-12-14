@@ -10,6 +10,8 @@ public class Publisher implements Subject {
     private Post latestPost;
 
     public Publisher(String publisherName) {
+        posts = new ArrayList<>();
+        observers = new ArrayList<>();
         this.publisherName = publisherName;
     }
 
@@ -20,7 +22,8 @@ public class Publisher implements Subject {
 
     public void removeObserver(Observer observer) {
         int indexOfObserver = observers.indexOf(observer);
-        if (indexOfObserver > 0) {
+        //System.out.println("Index of observer is " + indexOfObserver);
+        if (indexOfObserver >= 0) {
             observers.remove(indexOfObserver);
         }
     }
