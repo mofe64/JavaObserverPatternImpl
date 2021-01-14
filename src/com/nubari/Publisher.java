@@ -51,4 +51,8 @@ public class Publisher implements Subject {
         status = message;
         notifyObservers(status);
     }
+
+    public ArrayList<Observer> getObservers() {
+        return observers;
+    }
 }
